@@ -1,13 +1,16 @@
 const express = require('express'),
     mongoose = require('mongoose'),
-    Cours = require('./models/Cours.js');
-//  cors = require('cors');
+    Cours = require('./models/Cours.js'),
+    Classes = require('./models/Classes.js'),
+    cors = require('cors');
+
+
 
 
 
 const app = express();
-
-// app.use(cors());
+app.use(express.json());
+app.use(cors());
 
 // start the server
 
@@ -22,12 +25,26 @@ mongoose.connect('mongodb://localhost:27017/esprit', { useNewUrlParser: true, us
 
 /*
 method: GET 
-path:   /
+path:   /cours
+select * cours
 */
 
 app.get('/cours', async (req, res) => {
     res.send(await Cours.find({}))
 });
+
+
+/*
+method: GET 
+path:   /cours
+select * classes
+*/
+
+
+app.get('/classes', async (req, res) => {
+    res.send(await Classes.find({}))
+});
+
 
 /*
 method: GET
@@ -45,6 +62,7 @@ app.get('/cours/:id', async (req, res, next) => {
 })
 
 // error handler
+
 app.use((err, req, res, next) => {
     err.statusCode = err.statusCode || 500;
     res.status(err.statusCode).send({
