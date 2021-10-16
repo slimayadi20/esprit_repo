@@ -1,11 +1,8 @@
 const express = require('express'),
     mongoose = require('mongoose'),
     Cours = require('./models/Cours.js'),
-    Classes = require('./models/Classes.js'),
+    Matieres = require('./models/Matieres.js'),
     cors = require('cors');
-
-
-
 
 
 const app = express();
@@ -30,20 +27,48 @@ select * cours
 */
 
 app.get('/cours', async (req, res) => {
-    res.send(await Cours.find({}))
+    res.send(await Cours.find())
+
 });
+
+app.get('/cours/:name', async (req, res) => {
+    try {
+
+        const cours = await Cours.find({ name: req.params.name });
+        res.send(cours);
+    } catch (err) {
+        err.statusCode = 404;
+        next(err);
+    }
+
+});
+
+
+app.get('/matieres', async (req, res) => {
+    res.send(await Matieres.find())
+});
+
 
 
 /*
 method: GET 
 path:   /cours
-select * classes
+select * matiers
 */
 
 
-app.get('/classes', async (req, res) => {
-    res.send(await Classes.find({}))
+app.get('/matieres/:id', async (req, res) => {
+    try {
+
+        const matieres = await Matieres.find({ id: req.params.id });
+        res.send(matieres);
+    } catch (err) {
+        err.statusCode = 404;
+        next(err);
+    }
+
 });
+
 
 
 /*
@@ -51,15 +76,7 @@ method: GET
 path:   /:id
 */
 
-app.get('/cours/:id', async (req, res, next) => {
-    try {
-        const cours = await Cours.findById(req.params.id);
-        res.send(cours);
-    } catch (err) {
-        err.statusCode = 404;
-        next(err);
-    }
-})
+
 
 // error handler
 
