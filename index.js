@@ -1,6 +1,7 @@
 const express = require('express'),
     mongoose = require('mongoose'),
     Cours = require('./models/Cours.js'),
+    Feed = require('./models/Feed.js'),
     Matieres = require('./models/Matieres.js'),
     cors = require('cors');
 
@@ -57,10 +58,11 @@ select * matiers
 */
 
 
-app.get('/matieres/:id', async (req, res) => {
+app.get('/matieres/:niveau', async (req, res) => {
     try {
 
-        const matieres = await Matieres.find({ id: req.params.id });
+        console.log(req.params.niveau)
+        const matieres = await Matieres.find({ niveau: req.params.niveau });
         res.send(matieres);
     } catch (err) {
         err.statusCode = 404;
@@ -71,11 +73,33 @@ app.get('/matieres/:id', async (req, res) => {
 
 
 
+app.get('/matieres/search/:id', async (req, res) => {
+    try {
+        console.log(req.params.id)
+        const cours = await Cours.find({ chapitre: req.params.id });
+        res.send(cours);
+    } catch (err) {
+        err.statusCode = 404;
+        next(err);
+    }
+});
+
+
+
 /*
 method: GET
 path:   /:id
 */
-
+app.post('/message/add', async (req, res) => {
+    try {
+        console.log('test');
+        const feed = new Feed(req.body);
+        await feed.save();
+        res.status(200).send(feed);
+    } catch (err) {
+        res.status(400).send({ error: err })
+    }
+})
 
 
 // error handler
