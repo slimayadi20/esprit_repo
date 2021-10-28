@@ -77,7 +77,7 @@ app.get('/matieres/search/:id', async (req, res) => {
     try {
         console.log(req.params.id)
         const cours = await Cours.find({ chapitre: req.params.id });
-        res.send(cours);
+        // res.send(cours);
     } catch (err) {
         err.statusCode = 404;
         next(err);
