@@ -68,10 +68,10 @@
                 <form id="contactForm" [formGroup]="add" (ngSubmit)="addData()">
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" formControlName="name"
-                            placeholder="Enter your name..." />
-                        <label for="name">Full name</label>
-                        <div *ngIf="add.value.name == '' " class="invalid-feedback">A name is required.</div>
+                        <input class="form-control" id="name" type="email" formControlName="name"
+                            placeholder="Enter your E-mail..." />
+                        <label for="name">E-mail</label>
+                        <div *ngIf="add.value.name == '' " class="invalid-feedback">A E-mail is required.</div>
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">

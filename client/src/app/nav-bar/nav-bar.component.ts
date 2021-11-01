@@ -2,6 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { delay } from 'rxjs/operators';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -29,7 +30,9 @@ export class NavBarComponent implements OnInit {
     this.api.addNewMessage(this.add.value).subscribe((res: any) => {
       console.log(res);
 
+      alert("your message have been sent");
       window.location.reload();
+
 
 
     }, (err: any) => {

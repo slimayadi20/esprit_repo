@@ -44,7 +44,7 @@ export class MatiereComponent implements OnInit {
   searchFor() {
     const q = this.searchForm.value.query;
     console.log(q);
-  
+
   }
 
 }
