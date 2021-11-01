@@ -8,7 +8,8 @@
         <div class="col-12">
             <form>
                 <form [formGroup]="searchForm">
-                    <input  [(ngModel)]="searchText" class="form-control" type="serach" formControlName="query" placeholder="Search for ...">
+                    <input [(ngModel)]="searchText" class="form-control" type="serach" formControlName="query"
+                        placeholder="Search for ...">
                     <br>
 
                 </form>
@@ -20,11 +21,12 @@
             <div class="container px-lg-5">
                 <!-- Page Features-->
                 <div class="row gx-lg-5">
-                    <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let c of cours | filter:searchText" >
+                    <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let c of cours | filter:searchText ">
                         <div class="card bg-light border-0 h-100 view overlay">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div id="1" class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                                         class="bi bi-collection"></i></div>
+                                <p class="fs-4 fw-bold">{{c.number}}</p>
                                 <p class="fs-4 fw-bold">{{c.chapitre}}</p>
                                 <a [href]="c.URLcours" target="_blank" style="color:rgb(0, 0, 0)">
                                     <p style="font-family:arial">Cours</p>
@@ -40,7 +42,3 @@
             </div>
         </section>
     </div>
-
-
-
- 
