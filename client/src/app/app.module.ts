@@ -16,7 +16,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
-
+import {AccordionModule} from 'primeng/accordion';     
+import {MenuItem} from 'primeng/api';    
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CookieService } from 'ngx-cookie-service';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    SocialLoginModule
+    SocialLoginModule,
+    
 
 
 

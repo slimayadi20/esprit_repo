@@ -3,8 +3,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <div class="container mt-5">
-
+    <div class="loader text-center" *ngIf="isLoading">
+        <div class="spinner-border" style="color:red" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <div class="row">
+
+
         <div class="col-12">
             <form>
                 <form [formGroup]="searchForm">
@@ -15,6 +21,14 @@
                 </form>
             </form>
         </div>
+
+        <nav>
+            <ol class="cd-breadcrumb custom-separator">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/matieres/{{id}}">{{id}}</a></li>
+                <li class="current"> <em>{{name}}</em></li>
+            </ol>
+        </nav>
         <br>
         <br>
         <section class="pt-4">

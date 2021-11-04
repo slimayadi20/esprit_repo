@@ -13,11 +13,7 @@ export class MatieresComponent implements OnInit {
   id: any;
   isLoading = true;
   matieres: any;
-  searchText: any;
 
-  searchForm = new FormGroup({
-    query: new FormControl('')
-  })
   constructor(private router: LocationStrategy, private route: ActivatedRoute, private api: ApiService) { }
 
 
@@ -42,6 +38,7 @@ export class MatieresComponent implements OnInit {
 
     })
   }
+
 
 
 

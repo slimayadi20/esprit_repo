@@ -11,11 +11,18 @@
 
     <br>
     <br>
+    <nav>
+        <ol class="cd-breadcrumb custom-separator">
+            <li><a href="/home">Home</a></li>
+            <li class="current"> <em>{{id}}</em></li>
+        </ol>
+    </nav>
+
     <section class="pt-4">
         <div class="container px-lg-5">
             <!-- Page Features-->
             <div class="row gx-lg-5">
-                <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let m of matieres">
+                <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let m of matieres ">
                     <div [routerLink]=m class="card bg-light border-0 h-100">
                         <div [routerLink]=m class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             <div [routerLink]=m class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i

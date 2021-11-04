@@ -11,10 +11,11 @@ import { ApiService } from '../api.service';
 })
 export class MatiereComponent implements OnInit {
   name: any;
+  id: any;
   matieres: any;
   cours: any;
   searchText: any;
-
+  isLoading = true;
   searchForm = new FormGroup({
     query: new FormControl('')
   })
@@ -23,6 +24,7 @@ export class MatiereComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params.id;
     this.name = this.route.snapshot.params.name;
 
     console.log(this.name);
@@ -36,6 +38,7 @@ export class MatiereComponent implements OnInit {
     this.api.getCoursById(this.name).toPromise().then((res: any) => {
       console.log(res);
       this.cours = res;
+      this.isLoading = false
 
     }).catch((err) => {
 
