@@ -1,5 +1,5 @@
 $("#searchInput").focus(function () {
-  
+
   $("#searchInput").css({
     "display": "inline",
     "width": "40%",
@@ -10,6 +10,7 @@ $("#searchInput").focus(function () {
     "box-shadow": "0 0 1px black"
   });
   $("#submitsearch").css("display", "inline");
- 
+
   $("#searchInput").prop("placeholder", "");
 });
+

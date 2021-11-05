@@ -1,9 +1,16 @@
+    
 
-.a {
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-}
 .footer{
-    background-color:  rgb(172, 9, 9) ;
+    background-color:  whitesmoke;
+    position: relative ;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+   height: fit-content;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 100%);
+
+
+    
+
 }

@@ -30,7 +30,7 @@ export class NavBarComponent implements OnInit {
     this.api.addNewMessage(this.add.value).subscribe((res: any) => {
       console.log(res);
 
-      alert("your message have been sent");
+      alert("votre message a été envoyé avec succès \n Nous apprécions vos commentaires!");
       window.location.reload();
 
 

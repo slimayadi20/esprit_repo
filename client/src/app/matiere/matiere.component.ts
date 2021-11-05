@@ -30,11 +30,11 @@ export class MatiereComponent implements OnInit {
     console.log(this.name);
 
 
-    this.getMoviesDetails();
+    this.getMatiereDetails();
 
 
   }
-  getMoviesDetails() {
+  getMatiereDetails() {
     this.api.getCoursById(this.name).toPromise().then((res: any) => {
       console.log(res);
       this.cours = res;

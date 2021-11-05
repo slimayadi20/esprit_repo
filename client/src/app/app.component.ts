@@ -4,11 +4,11 @@ import * as Feather from 'feather-icons';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-}) 
+})
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     Feather.replace();
   }
 
-  title = 'esprit';
+  title = 'ES-REPO';
 }

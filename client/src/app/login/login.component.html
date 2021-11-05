@@ -37,8 +37,8 @@
         <button class="btn btn-danger rounded-pill px-3 mb-5 mb-lg-0" data-bs-toggle="modal"
           data-bs-target="#feedbackModal">
           <span class="d-flex align-items-center">
-            <i class="bi-chat-text-fill me-2"></i>
-            <span class="small">Send Feedback</span>
+            <i class="bi-chat-text-fill me-2" style="color:white"></i>
+            <span class="small" style="color:white">Send Feedback</span>
           </span>
         </button>
       </div>
@@ -66,7 +66,6 @@
               <div class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                   class="bi bi-collection"></i></div>
               <h2 class="fs-4 fw-bold">1 annee</h2>
-              <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
             </div>
           </div>
         </div>
@@ -76,7 +75,6 @@
               <div class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                   class="bi bi-cloud-download"></i></div>
               <h2 class="fs-4 fw-bold">2 annee</h2>
-              <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
             </div>
           </div>
         </div>
@@ -86,7 +84,6 @@
               <div class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                   class="bi bi-card-heading"></i></div>
               <h2 class="fs-4 fw-bold">3 annee</h2>
-              <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
             </div>
           </div>
         </div>
@@ -96,7 +93,6 @@
               <div class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i>
               </div>
               <h2 class="fs-4 fw-bold">4 annee</h2>
-              <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
             </div>
           </div>
         </div>
@@ -106,7 +102,6 @@
               <div class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-code"></i>
               </div>
               <h2 class="fs-4 fw-bold">5 annee</h2>
-              <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
             </div>
           </div>
         </div>
@@ -125,18 +120,17 @@
 
 </div>
 <div class="box ">
-  <h3 class="pop-up">Welcome to</h3>
-  <p>Integer non odio id ante rutrum dictum. Nam ac dapibus felis, at pharetra sapien. </p>
-  <p>Maecenas lacus nisi, pellentesque a congue vel, rhoncus sit amet lacus. Sed mattis ultrices risus in tincidunt.</p>
+  <h3 class="pop-up">Welcome to ESREPO</h3>
+  <p>Please login with your esprit account! </p>
   <div *ngIf="isLoggedin === false">
     <div>
       <button type="submit" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
     </div>
-   
+
     <br>
 
   </div>
- 
+
 </div>
 <script>
   $(function () {

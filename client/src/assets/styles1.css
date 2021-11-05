@@ -74,7 +74,9 @@
     scroll-behavior: smooth;
   }
 }
-
+html, body {
+  height:100%;
+} 
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -4035,12 +4037,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background: linear-gradient(
-    130deg,
-    rgb(172, 9, 9) 15%,
-    
-   white 20%
-  );
+  
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -6533,6 +6530,11 @@ textarea.form-control-lg {
   right: 0;
   left: 0;
   z-index: 1030;
+  background-color:white;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  
+
+  
 }
 
 .fixed-bottom {
