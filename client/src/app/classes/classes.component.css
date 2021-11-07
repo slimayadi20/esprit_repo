@@ -1,5 +1,5 @@
 .u-section-1 {
-	background-image:  linear-gradient(0deg, rgb(0 0 0 / 70%), rgb(131 130 130)), url("../../assets/img/a.jpg");
+	background-image:  linear-gradient(0deg, rgb(0 0 0 / 70%), rgb(131 130 130)), url("../../assets/img/LandingImage.jpg");
   }
   
   .u-section-1 .u-sheet-1 {
@@ -34746,3 +34746,11 @@
    /*begin-variables base-font-size*/ 
    html { font-size: 16px; }
    /*end-variables base-font-size*/
+
+   .boxcard{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+	cursor: pointer;
+  }
+  .boxcard:hover{
+	transform: scale(1.1);
+  }

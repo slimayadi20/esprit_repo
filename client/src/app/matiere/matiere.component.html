@@ -9,54 +9,47 @@
         </div>
     </div>
     <div class="row">
+        <form [formGroup]="searchForm">
+            <input [(ngModel)]="searchText" class="form-control boxsearch   " type="search" formControlName="query"
+                placeholder="Chercher...">
+        </form>
 
 
-        <div class="col-12">
-            <form>
-                <form [formGroup]="searchForm">
-                    <input [(ngModel)]="searchText" class="form-control" type="search" formControlName="query"
-                        placeholder="chercher...">
-                    <br>
-
-                </form>
-            </form>
-        </div>
-
-        <nav>
-            <ol class="cd-breadcrumb custom-separator">
-                <li><a href="/home">Home</a></li>
+        <nav style="margin: 3% 0% 5% 0%;">
+            <ol class=" cd-breadcrumb custom-separator boxbreadcrumb">
+                <li><a href=" /home">Home</a></li>
                 <li><a href="/matieres/{{id}}">{{id}}</a></li>
                 <li class="current"> <em>{{name}}</em></li>
             </ol>
         </nav>
-        <br>
-        <br>
+
         <section class="pt-4">
             <div class="container px-lg-5">
                 <!-- Page Features-->
                 <div class="row gx-lg-5">
                     <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let c of cours | filter:searchText ">
-                        <div class="card bg-light border-0 h-100 view overlay">
+                        <div class=" h-100 boxcard">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div id="1" class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
-                                        class="bi bi-book"></i></div>
-                                <h1 class="fs-2 fw-bold">{{c.number}}</h1>
-                                <h4>{{c.chapitre}}</h4>
-                                <br>
+                                        class="bi bi-book"></i>
+                                </div>
+                                <div class="ChaptreName">
+                                    <h1 class="fs-2 fw-bold">{{c.number}}</h1>
+                                    <h4>{{c.chapitre}}</h4>
+                                </div>
+                                <hr>
+
                                 <a [href]="c.URLcours? c.URLcours : 'https://drive.google.com/file/d/1lAAzOMKH3bKQFnuDQUDw5aUPoXQlbUkU/view?usp=sharing'"
-                                    target="_blank" [style.color]="c.URLcours? 'green' : 'red'">
+                                    target="_blank" [class]="c.URLcours? 'exist' : 'Noexist'">
 
                                     {{c.URLcours? 'Cours &#10004;' : 'Cours &#10060;'}}
-
                                 </a>
                                 <br>
                                 <a [href]="c.URLtd? c.URLtd : 'https://drive.google.com/file/d/1lAAzOMKH3bKQFnuDQUDw5aUPoXQlbUkU/view?usp=sharing'"
-                                    target="_blank" [style.color]="c.URLtd? 'green' : 'red'">
+                                    target="_blank" [class]="c.URLtd? 'exist' : 'Noexist'">
 
                                     {{c.URLtd? 'TD &#10004;' : 'TD &#10060;'}}
                                 </a>
-
-
                             </div>
                         </div>
                     </div>
@@ -64,3 +57,4 @@
             </div>
         </section>
     </div>
+</div>
