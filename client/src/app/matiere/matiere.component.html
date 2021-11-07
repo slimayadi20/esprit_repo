@@ -8,20 +8,24 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
+
+    <br>
     <div class="row">
+
         <form [formGroup]="searchForm">
             <input [(ngModel)]="searchText" class="form-control boxsearch   " type="search" formControlName="query"
-                placeholder="Chercher...">
+                placeholder="Rechercher un cours...">
         </form>
 
 
-        <nav style="margin: 3% 0% 5% 0%;">
+        <nav style="margin: 4% 0% 5% 0%;">
             <ol class=" cd-breadcrumb custom-separator boxbreadcrumb">
                 <li><a href=" /home">Home</a></li>
                 <li><a href="/matieres/{{id}}">{{id}}</a></li>
                 <li class="current"> <em>{{name}}</em></li>
             </ol>
         </nav>
+        <h1 class="fs-2 fw-bold">Cours:</h1>
 
         <section class="pt-4">
             <div class="container px-lg-5">
