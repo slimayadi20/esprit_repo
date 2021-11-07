@@ -17,7 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
 import {AccordionModule} from 'primeng/accordion';     
-import {MenuItem} from 'primeng/api';    
+import {MenuItem} from 'primeng/api';
+import { AboutusComponent } from './aboutus/aboutus.component';    
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MenuItem} from 'primeng/api';
     NotFoundComponent,
     FooterComponent,
     LoginComponent,
+    AboutusComponent,
     
   ],
   imports: [
