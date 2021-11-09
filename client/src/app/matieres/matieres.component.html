@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="loader text-center" *ngIf="isLoading">
+        <div class="spinner-border" style="color:red" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <nav style="margin: 2% 0% 5% 0%;">
+        <ol class="cd-breadcrumb custom-separator boxbreadcrumb">
+            <li><a href="/home">Home</a></li>
+            <li class="current"> <em>{{id}}</em></li>
+        </ol>
+    </nav>
+    <h1 class="fs-2 fw-bold">Matière:</h1>
+    <section class="pt-4">
+        <div class="container px-lg-5">
+            <!-- Page Features-->
+            <div class="row gx-lg-5">
+                <div class="col-lg-6 col-xxl-4 mb-5" *ngFor="let m of matieres ">
+                    <div [routerLink]=m class="boxcard h-100">
+                        <div [routerLink]=m class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div [routerLink]=m class="feature bg-danger bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-collection"></i></div>
+                            <h2 [routerLink]=m click=".()" class="fs-4 fw-bold">{{m}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class=" text-center py-5 a footer">
+    <div class="container px-5">
+        <div class="text-white-50 small">
+            <div class="mb-2" style="color:black;"> <i>{{quote}}</i></div>
+        </div>
+    </div>
+</footer>

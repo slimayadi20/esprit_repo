@@ -1,0 +1,146 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #2c3f4c;
+  background-color: #ffffff;
+}
+
+a {
+  color: #96c03d;
+  text-decoration: none;
+}
+
+section {
+  /* used just to separate different styles */
+  border-bottom: 1px solid #e6e6e6;
+  padding: 4em 0;
+}
+section h2 {
+  width: 90%;
+  margin: 0 auto 2em;
+  color: #2c3f4c;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+@media only screen and (min-width: 1170px) {
+  section {
+    padding: 6em 0;
+  }
+  section h2 {
+    margin: 0 auto 3em;
+  }
+}
+
+header {
+  background: #2c3f4c;
+  position: relative;
+}
+header h1 {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4em 0;
+  color: #ffffff;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-size: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
+
+/* -------------------------------- 
+
+Basic Style
+
+-------------------------------- */
+.cd-breadcrumb, .cd-multi-steps {
+  width: fit-content;
+  max-width: 768px;
+  padding: 0.5em 1em;
+  margin-left: 4%;
+  border-radius: .25em;
+}
+.cd-breadcrumb::after, .cd-multi-steps::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-breadcrumb li, .cd-multi-steps li {
+  display: inline-block;
+  float: left;
+  margin: 0.5em 0;
+}
+.cd-breadcrumb li::after, .cd-multi-steps li::after {
+  /* this is the separator between items */
+  display: inline-block;
+  content: '\00bb';
+  margin: 0 .6em;
+  color: #959fa5;
+}
+.cd-breadcrumb li:last-of-type::after, .cd-multi-steps li:last-of-type::after {
+  /* hide separator after the last item */
+  display: none;
+}
+.cd-breadcrumb li > *, .cd-multi-steps li > * {
+  /* single step */
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #2c3f4c;
+}
+.cd-breadcrumb li.current > *, .cd-multi-steps li.current > * {
+  /* selected step */
+  color: #c03d5e;
+}
+.no-touch .cd-breadcrumb a:hover, .no-touch .cd-multi-steps a:hover {
+  /* steps already visited */
+  color: #96c03d;
+}
+.cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {
+  /* replace the default separator with a custom icon */
+  content: '';
+  height: 16px;
+  width: 16px;
+  background: url(https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/img/cd-custom-separator.svg) no-repeat center center;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-breadcrumb, .cd-multi-steps {
+    padding: 0 1.2em;
+  }
+  .cd-breadcrumb li, .cd-multi-steps li {
+    margin: 1.2em 0;
+  }
+  .cd-breadcrumb li::after, .cd-multi-steps li::after {
+    margin: 0 1em;
+  }
+  .cd-breadcrumb li > *, .cd-multi-steps li > * {
+    font-size: 1.6rem;
+  }
+}
+.boxcard{
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  cursor:pointer;
+}
+.boxcard:hover{
+  transform: scale(1.1);
+}
+
+.boxbreadcrumb{
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
