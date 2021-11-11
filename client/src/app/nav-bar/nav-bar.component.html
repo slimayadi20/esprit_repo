@@ -33,7 +33,7 @@
                         href="/matieres/5année">5ème</a></li>
             </ul>
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                <li class="nav-item"><a class="nav-link me-lg-3" href="/aboutus" routerLinkActive="active">à propos</a>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="/apropos" routerLinkActive="active">à propos</a>
                 </li>
             </ul>
             <button class="btn btn-danger rounded-pill px-3 mb-5 mb-lg-0" data-bs-toggle="modal"
@@ -58,26 +58,19 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body border-0 p-4">
-                <form id="contactForm" [formGroup]="add" (ngSubmit)="addData()">
+                <form [formGroup]="add" (ngSubmit)="addData()" id="contactForm" >
                     <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="email" formControlName="name"
-                            placeholder="Enter your E-mail..." />
-                        <label for="name">E-mail</label>
-                        <div *ngIf="add.value.name == '' " class="invalid-feedback">A E-mail is required.</div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email" formControlName="name">
                     </div>
-                    <!-- Message input-->
-                    <div class="form-floating mb-3">
+                    <br>
+                    <div class="form-group">
                         <textarea class="form-control" id="message" type="text" formControlName="messages"
-                            placeholder="Enter your message here..." style="height: 10rem"></textarea>
-                        <label for="message">Message</label>
-                        <div *ngIf=" add.value.messages != '' " class="invalid-feedback">A message is required.</div>
-                    </div>
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
-                    </div>
+                        placeholder="Enter your message here..." style="height: 10rem" aria-placeholder="messages"></textarea>                    </div>
+                    <br>
                     <!-- Submit Button-->
-                    <div class="d-grid"><button [disabled]="! add.valid" class="btn btn-danger rounded-pill btn-lg "
+                    <div class="d-grid"><button [disabled]="!add.valid" class="btn btn-danger rounded-pill btn-lg "
                             id="submitButton" type="submit">Submit</button></div>
                 </form>
             </div>

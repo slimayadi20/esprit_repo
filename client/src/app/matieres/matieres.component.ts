@@ -21,7 +21,6 @@ export class MatieresComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
 
-    console.log(this.id);
 
     this.getMatieresDetails();
 
@@ -29,7 +28,6 @@ export class MatieresComponent implements OnInit {
   }
   getMatieresDetails() {
     this.api.getMatieresById(this.id).toPromise().then((res: any) => {
-      console.log(res);
 
       if (res[0].list) {
 

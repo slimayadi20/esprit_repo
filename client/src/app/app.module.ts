@@ -18,7 +18,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
 import { CookieService } from 'ngx-cookie-service';
 import {AccordionModule} from 'primeng/accordion';     
 import {MenuItem} from 'primeng/api';
-import { AboutusComponent } from './aboutus/aboutus.component';    
+import { AproposComponent } from './apropos/apropos.component';    
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     NotFoundComponent,
     FooterComponent,
     LoginComponent,
-    AboutusComponent,
+    AproposComponent,
     
   ],
   imports: [

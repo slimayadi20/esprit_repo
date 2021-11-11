@@ -13,31 +13,29 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   socialUser: SocialUser = new SocialUser;
-  isLoggedin: boolean = false;  
-  
+  isLoggedin: boolean = false;
+
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService,
-    private router:Router
+    private router: Router
   ) { }
 
   ngOnInit() {
-    
+
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-    });    
-    
+    });
+
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       this.isLoggedin = (user != null);
       this.router.navigateByUrl('/home')
-      console.log(this.socialUser);
     });
   }
-  setisLoggedin( test: boolean)
-  {
-    this.isLoggedin=test ; 
+  setisLoggedin(test: boolean) {
+    this.isLoggedin = test;
   }
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);

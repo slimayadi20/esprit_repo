@@ -27,7 +27,6 @@ export class MatiereComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.name = this.route.snapshot.params.name;
 
-    console.log(this.name);
 
 
     this.getMatiereDetails();
@@ -36,7 +35,6 @@ export class MatiereComponent implements OnInit {
   }
   getMatiereDetails() {
     this.api.getCoursById(this.name).toPromise().then((res: any) => {
-      console.log(res);
       this.cours = res;
       this.isLoading = false
 
@@ -44,11 +42,7 @@ export class MatiereComponent implements OnInit {
 
     })
   }
-  searchFor() {
-    const q = this.searchForm.value.query;
-    console.log(q);
 
-  }
 
 }
 

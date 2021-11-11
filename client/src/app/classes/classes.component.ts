@@ -13,19 +13,14 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./classes.component.css']
 })
 export class ClassesComponent implements OnInit {
-  inputValue=''; 
+  inputValue = '';
   socialUser: SocialUser = new SocialUser;
-  isLoggedin: boolean = false;  
+  isLoggedin: boolean = false;
 
-  constructor( 
+  constructor(
     private socialAuthService: SocialAuthService,
-    private router: Router,private api:ApiService) { }
-  classes = [
-    {id:1,name:"slim",username:"now"},
-    {id:2,name:"slim",username:"now"},
-    {id:3,name:"slim",username:"now"},
-    {id:4,name:"slim",username:"now"},
-  ];
+    private router: Router, private api: ApiService) { }
+
   searchForm = new FormGroup({
     query: new FormControl('')
   })
@@ -34,23 +29,16 @@ export class ClassesComponent implements OnInit {
     this.socialAuthService.authState.subscribe(() => {
     });
   }
-  searchFor(){
-    const q = this.searchForm.value.query;
-    console.log(q);
-    for (let i = 0; i < this.classes.length; i++) {
-      if(this.classes[i].id==q){
-        console.log (this.classes[i]);
-      }
-    }}   
-   
+
+
   logOut(): void {
     this.socialAuthService.signOut();
     window.location.reload();
 
   }
-   
-  
-  
-  
-  }
+
+
+
+
+}
 
